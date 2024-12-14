@@ -1,36 +1,35 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using System.Collections.Generic;
 
 public class ColllisionButton : MonoBehaviour
 {
     [SerializeField] private TilemapCollider2D _collider;
-    [SerializeField] private List<GameObject> _objectList;
+    [SerializeField] private int _player;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            _objectList.Add(collision.gameObject);
+            _player++;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            _objectList.RemoveAt(1);
+            _player--;
         }
     }
 
     private void Update()
     {
-        if (_objectList.Count != 0)
+        if (_player > 0)
         {
-            _collider.isTrigger = true;
+            _collider.gameObject.SetActive(false);
         }
         else
         {
-            _collider.isTrigger = false;
+            _collider.gameObject.SetActive(true);
         }
     }
 }
