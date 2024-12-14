@@ -24,6 +24,8 @@ public class SoundController : MonoBehaviour
         var audioSources = GetComponents<AudioSource>();
         colorAudioMap.Add("Red", audioSources[0]);
         colorAudioMap.Add("Blue", audioSources[1]);
+        colorAudioMap.Add("Green", audioSources[2]);
+        colorAudioMap.Add("Purple", audioSources[3]);
 
         StartMusic();
     }
