@@ -18,7 +18,7 @@ public class PlayerSplit : MonoBehaviour
         SceneManager.LoadScene("ColorMenu", LoadSceneMode.Additive);
     }
 
-    private void splitUp()
+    public void splitUp()
     {
         if (!canSplitHorizontal()) {
             return;
@@ -26,7 +26,7 @@ public class PlayerSplit : MonoBehaviour
         createClone(palette.splitUp());
     }
 
-    private void splitDown()
+    public void splitDown()
     {
         if (!canSplitHorizontal()) {
             return;
@@ -34,7 +34,7 @@ public class PlayerSplit : MonoBehaviour
         createClone(palette.splitDown());
     }
 
-    private void splitRight()
+    public void splitRight()
     {
         if (!canSplitVeritcal()) {
             return;
@@ -42,7 +42,7 @@ public class PlayerSplit : MonoBehaviour
         createClone(palette.splitRight());
     }
 
-    private void splitLeft()
+    public void splitLeft()
     {
         if (!canSplitVeritcal()) {
             return;
