@@ -3,10 +3,10 @@ using System;
 
 public class ColorPalette : MonoBehaviour
 {
-    string upRight;
-    string upLeft;
-    string downRight;
-    string downLeft;
+    public string upRight;
+    public string upLeft;
+    public string downRight;
+    public string downLeft;
 
     public ColorPalette(
         string upRight,

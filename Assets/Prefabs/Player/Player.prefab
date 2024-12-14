@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7780035929069255422}
   - component: {fileID: 50708664407466967}
   - component: {fileID: -1554465080435117658}
+  - component: {fileID: 6259356108373735781}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -275,7 +276,19 @@ MonoBehaviour:
     m_ActionId: 24908448-c609-4bc3-a128-ea258674378a
     m_ActionName: UI/TrackedDevicePosition
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6259356108373735781}
+        m_TargetAssemblyTypeName: PlayerSplit, Assembly-CSharp
+        m_MethodName: OnSplit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
@@ -309,3 +322,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41303122be1a7fcbb893767dcba65b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upRight: Green
+  upLeft: Red
+  downRight: Blue
+  downLeft: Purple
+--- !u!114 &6259356108373735781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002985108052657949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc98412594d1540ebac5785e68b6e72c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  palette: {fileID: -1554465080435117658}
