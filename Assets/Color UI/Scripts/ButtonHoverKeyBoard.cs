@@ -2,31 +2,47 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class KeyboardToHover : MonoBehaviour
+public class KeyboardNavigation : MonoBehaviour
 {
-    public Button targetButton;
+    public Button upButton;
+    public Button downButton;
+    public Button leftButton;
+    public Button rightButton;
 
-    private bool isHovering = false;
+    private Button currentHoveredButton;
+
+    void Start()
+    {
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && upButton != null)
         {
-            if (!isHovering)
-            {
-                SimulateHover(targetButton);
-                isHovering = true;
-            }
+            SetHover(upButton);
         }
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && downButton != null)
+        {
+            SetHover(downButton);
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && leftButton != null)
+        {
+            SetHover(leftButton);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && rightButton != null)
+        {
+            SetHover(rightButton);
+        }
+    }
 
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+    private void SetHover(Button button)
+    {
+        if (currentHoveredButton != null)
         {
-            if (isHovering)
-            {
-                SimulateExit(targetButton);
-                isHovering = false;
-            }
+            SimulateExit(currentHoveredButton);
         }
+        currentHoveredButton = button;
+        SimulateHover(currentHoveredButton);
     }
 
     private void SimulateHover(Button button)
