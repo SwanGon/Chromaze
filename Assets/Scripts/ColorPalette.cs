@@ -26,34 +26,40 @@ public class ColorPalette
         this.downLeft = "Purple";
     }
 
-    public static (ColorPalette, ColorPalette) splitUp(ColorPalette c)
+    public ColorPalette splitUp()
     {
-        ColorPalette up = new ColorPalette(c.upRight, c.upLeft, "", "");
-        ColorPalette down = new ColorPalette("", "", c.downRight, c.downLeft);
+        ColorPalette ret = new ColorPalette("", "", this.downRight, this.downLeft);
 
-        return (up, down);
+        this.downRight = "";
+        this.downLeft = "";
+        return ret;
     }
 
-    public static (ColorPalette, ColorPalette) splitDown(ColorPalette c)
+    public ColorPalette splitDown()
     {
-        var (up, down) = splitUp(c);
+        ColorPalette ret = new ColorPalette(this.upRight, this.upLeft, "", "");
 
-        return (down, up);
+        this.upRight = "";
+        this.upLeft = "";
+        return ret;
     }
 
-    public static (ColorPalette, ColorPalette) splitRight(ColorPalette c)
+    public ColorPalette splitRight()
     {
-        ColorPalette right = new ColorPalette(c.upRight, "", c.downRight, "");
-        ColorPalette left = new ColorPalette("", c.downLeft, "", c.downLeft);
+        ColorPalette ret = new ColorPalette("", this.upLeft, "", this.downLeft);
 
-        return (right, left);
+        this.upLeft = "";
+        this.downLeft = "";
+        return ret;
     }
 
-    public static (ColorPalette, ColorPalette) splitLeft(ColorPalette c)
+    public ColorPalette splitLeft()
     {
-        var (right, left) = splitRight(c);
+        ColorPalette ret = new ColorPalette(this.upRight, "", this.downRight, "");
 
-        return (left, right);
+        this.upRight = "";
+        this.downRight = "";
+        return ret;
     }
 
     public void fusePalette(ColorPalette other)
