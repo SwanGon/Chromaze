@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerSplit : MonoBehaviour
 {
     [SerializeField] ColorPalette palette;
+    [SerializeField] GameObject clonePrefab;
 
     public void OnSplit(InputAction.CallbackContext context)
     {
@@ -52,11 +53,16 @@ public class PlayerSplit : MonoBehaviour
 
     private void createClone(ColorPaletteClass newPalette)
     {
-        PlayerSplit newObject = Instantiate(this);
+        GameObject newObject = Instantiate(clonePrefab);
+        ColorPalette clonePalette = newObject.GetComponent<ColorPalette>();
+
+        if (clonePalette == null) {
+            Debug.Log("createClone: Could split the player: clone doesn't have a palette");
+            return;
+        }
 
         newObject.transform.position = transform.position;
-        newObject.palette.p = newPalette;
-        newObject.tag = "Clone";
+        clonePalette.p = newPalette;
     }
 
     private bool canSplitHorizontal()

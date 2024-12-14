@@ -334,10 +334,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41303122be1a7fcbb893767dcba65b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upRight: Green
-  upLeft: Red
-  downRight: 
-  downLeft: Purple
+  p:
+    upRight: Green
+    upLeft: Red
+    downRight: Blue
+    downLeft: Purple
 --- !u!114 &3949410563509937940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,3 +352,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   palette: {fileID: -1554465080435117658}
+  clonePrefab: {fileID: 1002985108052657949, guid: f4172effa9f14a06cafee538ad195a2b, type: 3}
