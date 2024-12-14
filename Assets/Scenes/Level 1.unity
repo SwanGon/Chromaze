@@ -2735,6 +2735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 143039997}
   _player: 0
+  _color: Red
 --- !u!1 &533402168
 GameObject:
   m_ObjectHideFlags: 0
