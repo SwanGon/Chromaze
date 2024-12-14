@@ -4314,6 +4314,7 @@ GameObject:
   - component: {fileID: 232355406}
   - component: {fileID: 232355408}
   - component: {fileID: 232355407}
+  - component: {fileID: 232355409}
   m_Layer: 0
   m_Name: Button blue
   m_TagString: Untagged
@@ -4504,6 +4505,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &232355409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232355405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b6593e0234824db4aed8c90e107a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 1049451449}
+  _player: 0
+  _color: Blue
 --- !u!1 &292965391
 GameObject:
   m_ObjectHideFlags: 0
