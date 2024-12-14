@@ -52,8 +52,9 @@ public class PlayerSplit : MonoBehaviour
 
     private void createClone(ColorPalette newPalette)
     {
-        PlayerSplit newObject = Instantiate(this, this.transform, false);
+        PlayerSplit newObject = Instantiate(this);
 
+        newObject.transform.position = transform.position;
         newObject.palette = newPalette;
         newObject.tag = "Clone";
     }
