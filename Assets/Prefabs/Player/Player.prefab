@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7780035929069255422}
   - component: {fileID: 50708664407466967}
   - component: {fileID: -1554465080435117658}
-  - component: {fileID: 6259356108373735781}
+  - component: {fileID: 3949410563509937940}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -213,10 +213,6 @@ MonoBehaviour:
     m_ActionName: 'Player/Look[/Mouse/delta]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
-    m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
@@ -277,7 +273,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDevicePosition
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6259356108373735781}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerSplit, Assembly-CSharp
         m_MethodName: OnSplit
         m_Mode: 0
@@ -291,6 +287,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3949410563509937940}
+        m_TargetAssemblyTypeName: PlayerSplit, Assembly-CSharp
+        m_MethodName: OnSplit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OnSplit
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4543dfca-7c9a-4a3d-841a-b11e894df713
+    m_ActionName: 'Player/Split[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -324,9 +336,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upRight: Green
   upLeft: Red
-  downRight: Blue
+  downRight: 
   downLeft: Purple
---- !u!114 &6259356108373735781
+--- !u!114 &3949410563509937940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerSplit : MonoBehaviour
 {
@@ -14,9 +15,7 @@ public class PlayerSplit : MonoBehaviour
 
     private void OnSplitPerformed()
     {
-        // Code à exécuter lors de l'action "Split"
-        Debug.Log("Split action performed!");
-        // Ajoute ici ton comportement spécifique (par ex., séparer le joueur).
+        SceneManager.LoadScene("ColorMenu", LoadSceneMode.Additive);
     }
 
     private void splitUp()
