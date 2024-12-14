@@ -75,7 +75,7 @@ public class ColorPalette : MonoBehaviour
 
     public string[] getColors()
     {
-        string[] allColors = {this.upRight, this.upLeft, this.downRight, this.downRight};
+        string[] allColors = {this.upRight, this.upLeft, this.downRight, this.downLeft};
 
         return Array.FindAll(allColors, str => str != "");
     }
