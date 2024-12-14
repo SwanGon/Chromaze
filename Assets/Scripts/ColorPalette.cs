@@ -1,6 +1,7 @@
+using UnityEngine;
 using System;
 
-public class ColorPalette
+public class ColorPalette : MonoBehaviour
 {
     string upRight;
     string upLeft;
