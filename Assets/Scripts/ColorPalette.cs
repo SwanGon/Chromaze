@@ -1,4 +1,7 @@
-public class ColorPalette
+using UnityEngine;
+using System;
+
+public class ColorPalette : MonoBehaviour
 {
     string upRight;
     string upLeft;
@@ -68,5 +71,12 @@ public class ColorPalette
         if (this.upLeft != "") this.upLeft = other.upLeft;
         if (this.downRight != "") this.downRight = other.downRight;
         if (this.downLeft != "") this.downLeft = other.downLeft;
+    }
+
+    public string[] getColors()
+    {
+        string[] allColors = {this.upRight, this.upLeft, this.downRight, this.downRight};
+
+        return Array.FindAll(allColors, str => str != "");
     }
 }
