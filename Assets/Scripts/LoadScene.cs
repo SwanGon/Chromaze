@@ -1,16 +1,32 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static LoadScene Instance;
+    [SerializeField] private string initialScene;
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    /*private void Start()
     {
-        
+        SceneManager.LoadScene(initialScene);
+    }*/
+
+    public void LoadLevel(string name)
+    {
+        SceneManager.LoadScene(name, LoadSceneMode.Additive);
+    }
+
+    public void UnloadLevel(string name)
+    {
+        SceneManager.UnloadSceneAsync(name);
     }
 }
