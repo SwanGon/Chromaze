@@ -23,7 +23,7 @@ public class PlayerSplit : MonoBehaviour
         if (!canSplitHorizontal()) {
             return;
         }
-        createClone(palette.splitUp());
+        createClone(palette.p.splitUp());
     }
 
     public void splitDown()
@@ -31,7 +31,7 @@ public class PlayerSplit : MonoBehaviour
         if (!canSplitHorizontal()) {
             return;
         }
-        createClone(palette.splitDown());
+        createClone(palette.p.splitDown());
     }
 
     public void splitRight()
@@ -39,7 +39,7 @@ public class PlayerSplit : MonoBehaviour
         if (!canSplitVeritcal()) {
             return;
         }
-        createClone(palette.splitRight());
+        createClone(palette.p.splitRight());
     }
 
     public void splitLeft()
@@ -47,27 +47,27 @@ public class PlayerSplit : MonoBehaviour
         if (!canSplitVeritcal()) {
             return;
         }
-        createClone(palette.splitLeft());
+        createClone(palette.p.splitLeft());
     }
 
-    private void createClone(ColorPalette newPalette)
+    private void createClone(ColorPaletteClass newPalette)
     {
         PlayerSplit newObject = Instantiate(this);
 
         newObject.transform.position = transform.position;
-        newObject.palette = newPalette;
+        newObject.palette.p = newPalette;
         newObject.tag = "Clone";
     }
 
     private bool canSplitHorizontal()
     {
-        return (palette.downRight != "" && palette.downLeft != "")
-            || (palette.upRight != "" && palette.upLeft != "");
+        return (palette.p.downRight != "" && palette.p.downLeft != "")
+            || (palette.p.upRight != "" && palette.p.upLeft != "");
     }
 
     private bool canSplitVeritcal()
     {
-        return (palette.upRight != "" && palette.downRight != "")
-            || (palette.upLeft != "" && palette.downLeft != "");
+        return (palette.p.upRight != "" && palette.p.downRight != "")
+            || (palette.p.upLeft != "" && palette.p.downLeft != "");
     }
 }
