@@ -1461,6 +1461,7 @@ GameObject:
   - component: {fileID: 292965394}
   - component: {fileID: 292965393}
   - component: {fileID: 292965395}
+  - component: {fileID: 292965396}
   m_Layer: 0
   m_Name: Button red
   m_TagString: Untagged
@@ -1689,6 +1690,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &292965396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292965391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b6593e0234824db4aed8c90e107a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 1049451449}
 --- !u!1 &533402168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,7 +2761,7 @@ GameObject:
   - component: {fileID: 1798880953}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
