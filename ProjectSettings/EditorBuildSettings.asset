@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: fea95a61f86e38b429836738dce099f6
+  - enabled: 1
+    path: Assets/Scenes/ColorMenu.unity
+    guid: 25050fd814dc77e4680743467f8a60f6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

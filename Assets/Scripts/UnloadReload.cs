@@ -7,6 +7,6 @@ public class UnloadReload : MonoBehaviour
         LoadScene LS = FindObjectOfType<LoadScene>();
 
         //LS.LoadLevel(nameReload);
-        LS.UnloadLevel(nameUnload);
+        //LS.UnloadLevel(nameUnload);
     }
 }

@@ -1,14 +1,15 @@
 using UnityEngine;
 using System;
 
-public class ColorPalette : MonoBehaviour
+[System.Serializable]
+public class ColorPaletteClass
 {
-    string upRight;
-    string upLeft;
-    string downRight;
-    string downLeft;
+    public string upRight;
+    public string upLeft;
+    public string downRight;
+    public string downLeft;
 
-    public ColorPalette(
+    public ColorPaletteClass(
         string upRight,
         string upLeft,
         string downRight,
@@ -21,7 +22,7 @@ public class ColorPalette : MonoBehaviour
         this.downLeft = downLeft;
     }
 
-    public ColorPalette()
+    public ColorPaletteClass()
     {
         this.upRight = "Green";
         this.upLeft = "Red";
@@ -29,53 +30,63 @@ public class ColorPalette : MonoBehaviour
         this.downLeft = "Purple";
     }
 
-    public ColorPalette splitUp()
+    public ColorPaletteClass splitUp()
     {
-        ColorPalette ret = new ColorPalette("", "", this.downRight, this.downLeft);
+        ColorPaletteClass ret = new ColorPaletteClass("", "", this.downRight, this.downLeft);
 
         this.downRight = "";
         this.downLeft = "";
         return ret;
     }
 
-    public ColorPalette splitDown()
+    public ColorPaletteClass splitDown()
     {
-        ColorPalette ret = new ColorPalette(this.upRight, this.upLeft, "", "");
+        ColorPaletteClass ret = new ColorPaletteClass(this.upRight, this.upLeft, "", "");
 
         this.upRight = "";
         this.upLeft = "";
         return ret;
     }
 
-    public ColorPalette splitRight()
+    public ColorPaletteClass splitRight()
     {
-        ColorPalette ret = new ColorPalette("", this.upLeft, "", this.downLeft);
+        ColorPaletteClass ret = new ColorPaletteClass("", this.upLeft, "", this.downLeft);
 
         this.upLeft = "";
         this.downLeft = "";
         return ret;
     }
 
-    public ColorPalette splitLeft()
+    public ColorPaletteClass splitLeft()
     {
-        ColorPalette ret = new ColorPalette(this.upRight, "", this.downRight, "");
+        ColorPaletteClass ret = new ColorPaletteClass(this.upRight, "", this.downRight, "");
 
         this.upRight = "";
         this.downRight = "";
         return ret;
     }
 
-    public void fusePalette(ColorPalette other)
+    public void fusePalette(ColorPaletteClass other)
     {
-        if (this.upRight != "") this.upRight = other.upRight;
-        if (this.upLeft != "") this.upLeft = other.upLeft;
-        if (this.downRight != "") this.downRight = other.downRight;
-        if (this.downLeft != "") this.downLeft = other.downLeft;
+        if (this.upRight == "") this.upRight = other.upRight;
+        if (this.upLeft == "") this.upLeft = other.upLeft;
+        if (this.downRight == "") this.downRight = other.downRight;
+        if (this.downLeft == "") this.downLeft = other.downLeft;
     }
+}
+
+public class ColorPalette : MonoBehaviour
+{
+    public ColorPaletteClass p;
 
     public string[] getColors()
     {
-        string[] allColors = {this.upRight, this.upLeft, this.downRight, this.downLeft};
+        string[] allColors = {
+            this.p.upRight,
+            this.p.upLeft,
+            this.p.downRight,
+            this.p.downLeft,
+        };
 
         return Array.FindAll(allColors, str => str != "");
     }
