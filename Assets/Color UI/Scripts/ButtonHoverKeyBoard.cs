@@ -47,6 +47,10 @@ public class KeyboardNavigation : MonoBehaviour
             SetHover(rightButton);
             direction = Direction.Right;
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.UnloadSceneAsync("ColorMenu");
+        }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             GameObject player = GameObject.FindWithTag("Player");
