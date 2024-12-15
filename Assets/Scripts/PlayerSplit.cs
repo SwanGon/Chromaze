@@ -6,6 +6,7 @@ public class PlayerSplit : MonoBehaviour
 {
     [SerializeField] ColorPalette palette;
     [SerializeField] GameObject clonePrefab;
+    public Sprite[] sprites;
 
     public void OnSplit(InputAction.CallbackContext context)
     {
@@ -63,6 +64,15 @@ public class PlayerSplit : MonoBehaviour
 
         newObject.transform.position = transform.position;
         clonePalette.p = newPalette;
+        if (newPalette.upRight != "" && newPalette.upLeft != "") {
+            newObject.GetComponent<SpriteRenderer>().sprite = sprites[2];
+        } else if (newPalette.upLeft != "" && newPalette.downLeft != "") {
+            newObject.GetComponent<SpriteRenderer>().sprite = sprites[0];
+        } else if (newPalette.downRight != "" && newPalette.downLeft != "") {
+            newObject.GetComponent<SpriteRenderer>().sprite = sprites[3];
+        } else if (newPalette.downRight != "" && newPalette.upRight != "") {
+            newObject.GetComponent<SpriteRenderer>().sprite = sprites[1];
+        }
     }
 
     public void fuseClone(GameObject clone)
