@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class CollisionFalse : MonoBehaviour
 {
-    [SerializeField] private GameObject _gameObject;
+    [SerializeField] private TilemapCollider2D _gameObject;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            _gameObject.SetActive(false);
+            _gameObject.isTrigger = true;
         }
     }
 }
