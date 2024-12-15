@@ -1,4 +1,3 @@
-using System.Drawing;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -11,15 +10,10 @@ public class ColllisionButton : MonoBehaviour
     [SerializeField] private string _color;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" || collision.tag == "Clone")
+        if (collision.CompareTag("Player") || collision.CompareTag("Clone"))
         {
             colorPalette = collision.GetComponent<ColorPalette>();
-        }
 
-        if (colorPalette.getColors().Contains(_color))
-        {
-            colorPalette = collision.GetComponent<ColorPalette>();
-            
             if (colorPalette.getColors().Contains(_color))
             {
                 _player++;
@@ -29,20 +23,15 @@ public class ColllisionButton : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Player" || other.tag == "Clone")
+        if (other.CompareTag("Player") || other.CompareTag("Clone"))
         {
             colorPalette = other.GetComponent<ColorPalette>();
-        }
 
-        if (colorPalette.getColors().Contains(_color))
-        {
-            colorPalette = other.GetComponent<ColorPalette>();
-            
             if (colorPalette.getColors().Contains(_color))
             {
-                _player--;
+                _player = 0;
             }
-        }        
+        }
     }
 
     private void Update()
