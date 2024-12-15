@@ -14,11 +14,11 @@ public class ColllisionButton : MonoBehaviour
         if (collision.tag == "Player" || collision.tag == "Clone")
         {
             colorPalette = collision.GetComponent<ColorPalette>();
-        }
-
-        if (colorPalette.getColors().Contains(_color))
-        {
-            _player++;
+            
+            if (colorPalette.getColors().Contains(_color))
+            {
+                _player++;
+            }
         }
     }
 
@@ -27,12 +27,12 @@ public class ColllisionButton : MonoBehaviour
         if (other.tag == "Player" || other.tag == "Clone")
         {
             colorPalette = other.GetComponent<ColorPalette>();
-        }
-
-        if (colorPalette.getColors().Contains(_color))
-        {
-            _player--;
-        }
+            
+            if (colorPalette.getColors().Contains(_color))
+            {
+                _player--;
+            }
+        }        
     }
 
     private void Update()
