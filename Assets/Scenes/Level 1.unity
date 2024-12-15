@@ -2841,6 +2841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1683221579388086338, guid: e92c178171c9ef3408da70e47ab9d36a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8755842687473364500, guid: 51eb5030fe6a78f4a978e3a258ff45d1, type: 3}
     - target: {fileID: 4105282587598855875, guid: e92c178171c9ef3408da70e47ab9d36a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.089
@@ -2881,10 +2885,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4797421893808310364, guid: e92c178171c9ef3408da70e47ab9d36a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.0666667
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1002985108052657949, guid: e92c178171c9ef3408da70e47ab9d36a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 806911778}
   m_SourcePrefab: {fileID: 100100000, guid: e92c178171c9ef3408da70e47ab9d36a, type: 3}
 --- !u!1 &533402168
 GameObject:
@@ -3358,6 +3369,33 @@ Transform:
   - {fileID: 1154492070}
   m_Father: {fileID: 533402170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &806911777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1002985108052657949, guid: e92c178171c9ef3408da70e47ab9d36a, type: 3}
+  m_PrefabInstance: {fileID: 386385644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &806911778
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806911777}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32681e293c9a7a34095b526c2584c5c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &922774455
 GameObject:
   m_ObjectHideFlags: 0
