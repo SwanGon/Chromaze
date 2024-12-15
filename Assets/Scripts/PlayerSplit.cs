@@ -84,13 +84,23 @@ public class PlayerSplit : MonoBehaviour
 
     private bool canSplitHorizontal()
     {
-        return (palette.p.downRight != "" && palette.p.downLeft != "")
-            || (palette.p.upRight != "" && palette.p.upLeft != "");
+        if (palette.p.downRight == "" && palette.p.downLeft == "") {
+            return false;
+        }
+        if (palette.p.upRight == "" && palette.p.upLeft == "") {
+            return false;
+        }
+        return true;
     }
 
     private bool canSplitVeritcal()
     {
-        return (palette.p.upRight != "" && palette.p.downRight != "")
-            || (palette.p.upLeft != "" && palette.p.downLeft != "");
+        if (palette.p.upRight == "" && palette.p.downRight == "") {
+            return false;
+        }
+        if (palette.p.upLeft == "" && palette.p.downLeft == "") {
+            return false;
+        }
+        return true;
     }
 }
