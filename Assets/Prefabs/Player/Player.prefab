@@ -372,6 +372,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   palette: {fileID: -1554465080435117658}
   clonePrefab: {fileID: 1002985108052657949, guid: f4172effa9f14a06cafee538ad195a2b, type: 3}
+  sprites:
+  - {fileID: 6765143453117729332, guid: d6374a43d4a111b4395d1d22d636aa84, type: 3}
+  - {fileID: 8496193483804769136, guid: 9df13be3b7363404fa3c15a899be7c6b, type: 3}
+  - {fileID: 7680498971449840730, guid: 070c607464d5fc746b753d198beaa542, type: 3}
+  - {fileID: -1432838807737228730, guid: f41178afa2267ed43bfe6786477fc8be, type: 3}
 --- !u!114 &3269395624090885423
 MonoBehaviour:
   m_ObjectHideFlags: 0
