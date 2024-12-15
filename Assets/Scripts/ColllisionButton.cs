@@ -14,6 +14,11 @@ public class ColllisionButton : MonoBehaviour
         if (collision.tag == "Player" || collision.tag == "Clone")
         {
             colorPalette = collision.GetComponent<ColorPalette>();
+        }
+
+        if (colorPalette.getColors().Contains(_color))
+        {
+            colorPalette = collision.GetComponent<ColorPalette>();
             
             if (colorPalette.getColors().Contains(_color))
             {
@@ -25,6 +30,11 @@ public class ColllisionButton : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player" || other.tag == "Clone")
+        {
+            colorPalette = other.GetComponent<ColorPalette>();
+        }
+
+        if (colorPalette.getColors().Contains(_color))
         {
             colorPalette = other.GetComponent<ColorPalette>();
             
