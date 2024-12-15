@@ -68,10 +68,10 @@ public class ColorPaletteClass
 
     public void fusePalette(ColorPaletteClass other)
     {
-        if (this.upRight != "") this.upRight = other.upRight;
-        if (this.upLeft != "") this.upLeft = other.upLeft;
-        if (this.downRight != "") this.downRight = other.downRight;
-        if (this.downLeft != "") this.downLeft = other.downLeft;
+        if (this.upRight == "") this.upRight = other.upRight;
+        if (this.upLeft == "") this.upLeft = other.upLeft;
+        if (this.downRight == "") this.downRight = other.downRight;
+        if (this.downLeft == "") this.downLeft = other.downLeft;
     }
 }
 
