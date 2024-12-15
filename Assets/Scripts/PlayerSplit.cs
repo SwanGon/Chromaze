@@ -65,6 +65,23 @@ public class PlayerSplit : MonoBehaviour
         clonePalette.p = newPalette;
     }
 
+    public void fuseClone(GameObject clone)
+    {
+        if (clone.tag != "Clone") {
+            Debug.Log("PlayerSplit:fuseClone: Invalid tag");
+            return;
+        }
+
+        ColorPalette clonePalette = clone.GetComponent<ColorPalette>();
+        if (clonePalette == null) {
+            Debug.Log("PlayerSplit:fuseClone: clone has no palette");
+            return;
+        }
+
+        palette.p.fusePalette(clonePalette.p);
+        Object.Destroy(clone);
+    }
+
     private bool canSplitHorizontal()
     {
         return (palette.p.downRight != "" && palette.p.downLeft != "")
