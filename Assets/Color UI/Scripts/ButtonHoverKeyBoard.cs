@@ -18,11 +18,51 @@ public class KeyboardNavigation : MonoBehaviour
     public Button rightButton;
 
     public Direction direction;
+    public GameObject blue;
+    public GameObject green;
+    public GameObject red;
+    public GameObject purple;
 
     private Button currentHoveredButton;
 
+    private GameObject player;
+
+    void Awake()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
+
     void Start()
     {
+        ColorPalette palette = player.GetComponent<ColorPalette>();
+        
+        if (palette != null)
+        {
+            string[] playerPalette = palette.getColors();
+
+            red.SetActive(false);
+            green.SetActive(false);
+            blue.SetActive(false);
+            purple.SetActive(false);
+
+            foreach (string color in playerPalette)
+            {
+                if (color == "Red") {
+                    red.SetActive(true);
+                }
+                if (color == "Purple") {
+                    purple.SetActive(true);
+                }
+                if (color == "Green") {
+                    green.SetActive(true);
+                }
+                if (color == "Blue") {
+                    blue.SetActive(true);
+                }
+            }
+        }
+        
+
     }
 
     void Update()
@@ -49,12 +89,10 @@ public class KeyboardNavigation : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.UnloadSceneAsync("ColorMenu");
+            Unload();
         }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
-            GameObject player = GameObject.FindWithTag("Player");
-
             if (player == null) {
                 Debug.Log("Color choice validate: did not find player");
                 return;
@@ -112,5 +150,11 @@ public class KeyboardNavigation : MonoBehaviour
     private void SimulateExit(Button button)
     {
         ExecuteEvents.Execute(button.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerExitHandler);
+    }
+
+    public void Unload()
+    {
+        Debug.Log("test");
+        SceneManager.UnloadSceneAsync("ColorMenu");
     }
 }
