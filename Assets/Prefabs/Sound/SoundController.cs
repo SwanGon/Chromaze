@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 using System.Collections.Generic;
-
 public class SoundController : MonoBehaviour
 {
     private Dictionary<string, AudioSource> colorAudioMap;
@@ -38,14 +38,37 @@ public class SoundController : MonoBehaviour
         }
     }
 
-    public void stopMusic(string color)
+    private void stopMusic(string color)
     {
-        
+        try
+        {
+            colorAudioMap[color].mute = true;
+        }
+        catch (KeyNotFoundException)
+        {
+            Debug.Log("Color " + color + " not found in colorAudioMap");
+        }
         colorAudioMap[color].mute = true;    
     }
 
-    public void playMusic(string color)
+    private void playMusic(string color)
     {
-        colorAudioMap[color].mute = false;
+        try {
+            colorAudioMap[color].mute = false;
+        } catch (KeyNotFoundException) {
+            Debug.Log("Color " + color + " not found in colorAudioMap");
+        }
+    }
+
+    public void updateMusics(string[] colors){
+        foreach (string color in colorAudioMap.Keys)
+        {
+            if (colors.Contains(color)) 
+            {
+                playMusic(color);
+            } else {
+                stopMusic(color);
+            }
+        }
     }
 }

@@ -7,6 +7,13 @@ public class PlayerSplit : MonoBehaviour
     [SerializeField] ColorPalette palette;
     [SerializeField] GameObject clonePrefab;
 
+    private SoundController soundControllerInstance;
+
+    private void Awake()
+    {
+        soundControllerInstance = SoundController.Instance;
+    }
+
     public void OnSplit(InputAction.CallbackContext context)
     {
         if (context.performed) {
@@ -53,6 +60,7 @@ public class PlayerSplit : MonoBehaviour
 
     private void createClone(ColorPaletteClass newPalette)
     {
+        soundControllerInstance.updateMusics(palette.getColors());
         GameObject newObject = Instantiate(clonePrefab);
         ColorPalette clonePalette = newObject.GetComponent<ColorPalette>();
 
@@ -80,6 +88,8 @@ public class PlayerSplit : MonoBehaviour
 
         palette.p.fusePalette(clonePalette.p);
         Object.Destroy(clone);
+
+        soundControllerInstance.updateMusics(palette.getColors());
     }
 
     private bool canSplitHorizontal()
